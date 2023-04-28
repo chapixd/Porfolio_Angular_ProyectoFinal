@@ -1,12 +1,7 @@
-h1{
-    text-align: center;
+div{
+    background-color: #92bce3;
 }
-h2{
-    text-align: center;
+app-social{
+    float: right;
+    margin-top: 25px;
 }
-img{
-    width: 200px;
-    height: 200px;
-    align-items: left;
-}
-

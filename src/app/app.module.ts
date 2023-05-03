@@ -13,6 +13,17 @@ import { LogoAPComponent } from './component/logo-ap/logo-ap.component';
 import { BannerComponent } from './component/banner/banner.component';
 import { EducacionComponent } from './component/educacion/educacion.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+
+import { HttpClient, HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './component/home/home.component';
+import { LoginComponent } from './component/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { intercepotorProvider } from './service/interceptor-service';
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,14 +36,22 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     LogoAPComponent,
     BannerComponent,
     EducacionComponent,
+    HomeComponent,
+    LoginComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    intercepotorProvider,
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

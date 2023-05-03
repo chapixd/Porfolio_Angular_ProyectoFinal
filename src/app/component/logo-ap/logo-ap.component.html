@@ -3,12 +3,13 @@
         <div class="logo"> <img src="../../../assets/APLogo.png" id="logo">
    </div>
     <div class="redes">
-        <a href=""> <img src="../../../assets/github.png" id="github"></a>
-        <a href=""> <img src="../../../assets/facebook.png" id="facebook"></a>
-        <a href=""> <img src="../../../assets/instagram.png" id="instagram"></a>
-        <a href=""> <img src="../../../assets/linkedin.png" id="linkedin "></a>
+        <a href="https://github.com/chapixd"> <img src="../../../assets/github.png" id="github"></a>
+        <a href="https://www.facebook.com/maximo.arganaraz/"> <img src="../../../assets/facebook.png" id="facebook"></a>
+        <a href="https://www.instagram.com/maximo_arganaraz_/?hl=es-la"> <img src="../../../assets/instagram.png" id="instagram"></a>
+        <a href="https://www.linkedin.com/in/maximo-arga%C3%B1araz-a72390213/"> <img src="../../../assets/linkedin.png" id="linkedin "></a>
 
-        <button type="button" class="btn btn-primary">Ingreso</button>
+        <button class="btn btn-outline-light btn-lg px-4" type="submit"(click)="login()" *ngIf="!isLogged">Login</button>
+        <button class="btn btn-outline-light btn-lg px-4" type="submit"(click)="onLogOut()"*ngIf="isLogged">Cerrar Sesion</button>
     </div>
 
 

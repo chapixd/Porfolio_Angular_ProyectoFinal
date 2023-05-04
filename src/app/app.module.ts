@@ -19,6 +19,8 @@ import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { intercepotorProvider } from './service/interceptor-service';
+import { NewExperienciaComponent } from './component/experiencia-laboral/new-experiencia.component';
+import { EditExpComponent } from './component/experiencia-laboral/edit-exp.component';
 
 
 
@@ -38,6 +40,8 @@ import { intercepotorProvider } from './service/interceptor-service';
     EducacionComponent,
     HomeComponent,
     LoginComponent,
+    NewExperienciaComponent,
+    EditExpComponent,
     
     
   ],

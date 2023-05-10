@@ -1,43 +1,33 @@
 <div id="conteiner">
-  <h2>
-    Experiencia
-  </h2>
-  <div class="col-lg-2">
-    <button type="button" class="btn btn-outline-success" routerLink="/nuevaEdu">
-     Agregar Experiencia
-    </button>
+
+
+
+<div class="col-lg-1"></div>
+    <div class="col-lg-11">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let Experiencia of experiencia">
+            <td>
+              <h2>{{Experiencia.nombreEx}} </h2>
+            </td>
+            <td>{{Experiencia.descripcionEx}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" routerLink="/editEdu/{{Experiencia.id}}">
+                <i class="bi bi-pencil-square"></i>
+              </button>Editar
+            </td>
+  
+  
+            <td>
+              <button type="button" class="btn btn-danger" (click)="delete(Experiencia.id)">
+                <i class="bi bi-x-circle-fill"></i>
+              </button>Borrar
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  
+    </div>
+  
   </div>
-
-
-
-  <div class="col-lg-1"></div>
-  <div class="col-lg-11">
-    <table class="table">
-      <tbody>
-        <tr *ngFor="let Experiencia of experiencia">
-          <td>
-            <p>Experiencia</p>
-            <h2>{{Experiencia.nombreE}} </h2>
-          </td>
-          <td>{{Experiencia.descripcionE}}</td>
-          <td>
-            <button type="button" class="btn btn-primary" routerLink="/editE/{{Experiencia.id}}">
-              <i class="bi bi-pencil-square"></i>
-            </button>Editar
-          </td>
-
-
-          <td>
-            <button type="button" class="btn btn-danger" (click)="delete(Experiencia.id)">
-              <i class="bi bi-x-circle-fill"></i>
-            </button>Borrar
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-
-  </div>
-
-
-</div>

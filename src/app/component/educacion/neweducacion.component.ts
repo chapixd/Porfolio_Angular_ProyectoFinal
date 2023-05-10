@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-neweducacion',
@@ -9,8 +10,8 @@ import { EducacionService } from 'src/app/service/educacion.service';
   styleUrls: ['./neweducacion.component.css']
 })
 export class NeweducacionComponent implements OnInit {
-nombreEdu: string="";
-descripcionEdu: string="";
+nombreEdu: string= '';
+descripcionEdu: string='';
 
 constructor(private educacionS: EducacionService, private router: Router){}
 
@@ -18,17 +19,21 @@ ngOnInit():void{}
 
 onCreate(): void{
   const educacion = new Educacion(this.nombreEdu, this.descripcionEdu);
-  this.educacionS.save(educacion).subscribe(
-    data =>{
-      alert("Educacion añadida");
-      this.router.navigate(['']);
-    }, err=>{
+  this.educacionS.save(educacion)
+  .subscribe(
+    {
+       next:  data =>{
+              alert("Educacion añadida");
+              this.router.navigateByUrl('');
+              
+            },
+            error:err=>{
       alert("fallo");
-      this.router.navigate(['']);
+      this.router.navigateByUrl('');
     }
-    
-  )
-}
+    })
+  
+  }
 
 }
 

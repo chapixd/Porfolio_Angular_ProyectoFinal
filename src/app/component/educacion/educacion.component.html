@@ -2,15 +2,41 @@
     <h2>
       Educacion
     </h2>
-
-    <h3>Educacion1</h3>
-
-<p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ex amet eos aliquam, unde blanditiis ipsum veritatis dolor distinctio soluta saepe vel dignissimos modi nam sed nostrum nulla tenetur inventore.s
-</p>
-    <h4>Educacion2 </h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque consectetur veniam vero dolorem voluptatem recusandae ducimus, quis velit eligendi aliquid voluptatum incidunt 
-        pariatur unde explicabo voluptatibus voluptates vel nemo! Tempora.</p>
-
-</div>
-
+    <div class="col-lg-2">
+      <button type="button" class="btn btn-outline-success" routerLink="/nuevaEdu">
+       Agregar Educacion
+      </button>
+    </div>
+  
+  
+  
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let Educacion of educacion">
+            <td>
+              <h2>{{Educacion.nombreE}} </h2>
+            </td>
+            <td>{{Educacion.descripcionE}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" routerLink="/editEdu/{{Educacion.id}}">
+                <i class="bi bi-pencil-square"></i>
+              </button>edit
+            </td>
+  
+  
+            <td>
+              <button type="button" class="btn btn-danger" (click)="delete(Educacion.id)">
+                <i class="bi bi-x-circle-fill"></i>
+              </button>borrar
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  
+    </div>
+  
+  
+  </div>

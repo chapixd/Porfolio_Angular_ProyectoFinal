@@ -18,9 +18,10 @@ import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { intercepotorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './component/experiencia-laboral/new-experiencia.component';
 import { EditExpComponent } from './component/experiencia-laboral/edit-exp.component';
+import { NeweducacionComponent } from './component/educacion/neweducacion.component';
+import { EditeducacionComponent } from './component/educacion/editeducacion.component';
 
 
 
@@ -42,6 +43,8 @@ import { EditExpComponent } from './component/experiencia-laboral/edit-exp.compo
     LoginComponent,
     NewExperienciaComponent,
     EditExpComponent,
+    NeweducacionComponent,
+    EditeducacionComponent,
     
     
   ],
@@ -52,10 +55,7 @@ import { EditExpComponent } from './component/experiencia-laboral/edit-exp.compo
     HttpClientModule,
     FormsModule,
   ],
-  providers: [
-    intercepotorProvider,
-    
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,8 +9,8 @@ import { EducacionService } from 'src/app/service/educacion.service';
   styleUrls: ['./neweducacion.component.css']
 })
 export class NeweducacionComponent implements OnInit {
-nombreEdu: string;
-descripcionEdu: string;
+nombreEdu: string="";
+descripcionEdu: string="";
 
 constructor(private educacionS: EducacionService, private router: Router){}
 

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EducacionService {
-URL= "http//localhost:8080/educacion/"
+URL= "http://localhost:8080/educacion/"
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
@@ -18,12 +18,12 @@ URL= "http//localhost:8080/educacion/"
     return this.httpClient.get<Educacion>(this.URL + `detail/${id}`);
   }
 
-  public save(experiencia:Educacion): Observable<any>{
-    return this.httpClient.post<any>(this.URL + 'create', experiencia);
+  public save(edu:Educacion): Observable<any>{
+    return this.httpClient.post<any>(this.URL + 'create', edu);
   }
 
-  public update(id: number, experiencia:Educacion): Observable<any>{
-    return this.httpClient.put<any>(this.URL + `update/${id}`,experiencia);
+  public update(id: number, edu:Educacion): Observable<any>{
+    return this.httpClient.put<any>(this.URL + `update/${id}`,edu);
   }
 
   public delate(id: number): Observable<any>{

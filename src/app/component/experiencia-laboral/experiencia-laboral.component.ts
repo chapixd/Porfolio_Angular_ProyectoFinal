@@ -9,7 +9,7 @@ import { SExperienciaService } from 'src/app/service/s-experiencia.service';
   styleUrls: ['./experiencia-laboral.component.css']
 })
 export class ExperienciaLaboralComponent implements OnInit {
-exp: Experiencia[] = [];
+experiencia: Experiencia[] = [];
 
 
 constructor(private sExperiencia: SExperienciaService){}
@@ -23,11 +23,11 @@ ngOnInit(): void {
   }
 
  cargarExperiencia(): void{
-  this.sExperiencia.lista().subscribe(data =>{this.exp = data;})
+  this.sExperiencia.lista().subscribe(data =>{this.experiencia = data;})
 } 
 
 delete(id?:number){
-  if(id != undefined){
+  if(id!= undefined){
     this.sExperiencia.delate(id).subscribe(
       data => {
         this.cargarExperiencia();

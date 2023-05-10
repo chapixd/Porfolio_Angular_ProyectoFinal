@@ -1,10 +1,10 @@
 <div id="conteiner">
   <h2>
-    Experiencia Laboral
+    Experiencia
   </h2>
   <div class="col-lg-2">
-    <button type="button" class="btn btn-outline-success" routerLink="/nuevaexp">
-      Nueva Experiencia
+    <button type="button" class="btn btn-outline-success" routerLink="/nuevaEdu">
+     Agregar Experiencia
     </button>
   </div>
 
@@ -14,22 +14,23 @@
   <div class="col-lg-11">
     <table class="table">
       <tbody>
-        <tr *ngFor="let Experiencia of exp">
+        <tr *ngFor="let Experiencia of experiencia">
           <td>
+            <p>Experiencia</p>
             <h2>{{Experiencia.nombreE}} </h2>
           </td>
           <td>{{Experiencia.descripcionE}}</td>
           <td>
-            <button type="button" class="btn btn-primary" routerLink="/editExp/{{Experiencia.id}}">
+            <button type="button" class="btn btn-primary" routerLink="/editE/{{Experiencia.id}}">
               <i class="bi bi-pencil-square"></i>
-            </button>edit
+            </button>Editar
           </td>
 
 
           <td>
             <button type="button" class="btn btn-danger" (click)="delete(Experiencia.id)">
               <i class="bi bi-x-circle-fill"></i>
-            </button>borrar
+            </button>Borrar
           </td>
         </tr>
       </tbody>

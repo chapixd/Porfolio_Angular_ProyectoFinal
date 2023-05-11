@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/service/login.service';
 
 
 @Component({
@@ -8,12 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./logo-ap.component.css']
 })
 export class LogoAPComponent implements OnInit {
-  
-  constructor(private router:Router,){
+  userLoginOn:boolean=false;
+  constructor(private loginService:LoginService){
 
   }
   
 ngOnInit(): void {
+  this.loginService.currentUserLoginOn.subscribe(
+    {
+      next:(userLoginOn)=>{
+        this.userLoginOn=userLoginOn;
+      }
+  })
 
 }
 

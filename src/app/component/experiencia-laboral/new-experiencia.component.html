@@ -1,4 +1,4 @@
-<div class="conreiner">
+<div class="conteiner">
     <div class="row">
         <div>
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
@@ -7,10 +7,10 @@
                         <input type="text" class="form-control" id="nombreE" name="nombreE" [(ngModel)]="nombreE" required>
                     </div>
                     <div class="form-group">
-                        <label for="descriptcionE">Descripcion</label>
+                        <label for="descriptcionE">Descripcion de la Experiencia</label>
                         <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="descripcionE" required>
                     </div>
-                    <button type="button" class="btn btn-outline-success">Agregar Experiencia</button>
+                    <button  class="btn" type="submit" class="btn btn-outline-success">Agregar Experiencia</button>
             </form>
         </div>
     </div>

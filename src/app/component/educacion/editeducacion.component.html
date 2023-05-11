@@ -1,4 +1,4 @@
-<div class="conreiner" *ngIf="educacion">
+<div class="conteiner" *ngIf="educacion">
     <div class="row">
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
@@ -10,7 +10,7 @@
                         <label for="descriptcionE">Descripcion de los estudios</label>
                         <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="educacion.descripcionEdu" required>
                     </div>
-                    <button type="button" class="btn btn-outline-success">Actualizar Educacion</button>
+                    <button  class="btn" type="submit" class="btn btn-outline-success">Editar Educacion</button>
             </form>
         </div>
     </div>

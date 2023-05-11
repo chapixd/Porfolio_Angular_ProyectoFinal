@@ -22,7 +22,7 @@ export class EditeducacionComponent implements OnInit{
           this.educacion = data;
         }, err=>{
           alert("error al modificar educacion");
-          this.router.navigate(['']);
+          this.router.navigateByUrl('');
         }
       )
     }
@@ -31,10 +31,10 @@ export class EditeducacionComponent implements OnInit{
       const id = this.activatedRouter.snapshot.params['id'];
   this.educacionS.update(id, this.educacion).subscribe(
     data =>{
-      this.router.navigate(['']);
+      this.router.navigateByUrl('');
     }, err=>{
       alert("error al modificar educacion");
-      this.router.navigate(['']);
+      this.router.navigateByUrl('');
     }
   )
 }

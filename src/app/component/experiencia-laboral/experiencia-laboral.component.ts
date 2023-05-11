@@ -19,7 +19,7 @@ constructor(private sExperiencia: SExperienciaService){}
 
 ngOnInit(): void {
  
-  
+  this.cargarExperiencia();
   }
 
  cargarExperiencia(): void{
@@ -28,7 +28,8 @@ ngOnInit(): void {
 
 delete(id?:number){
   if(id!= undefined){
-    this.sExperiencia.delate(id).subscribe(
+    this.sExperiencia.delate(id)
+    .subscribe(
       data => {
         this.cargarExperiencia();
       }, err=>{

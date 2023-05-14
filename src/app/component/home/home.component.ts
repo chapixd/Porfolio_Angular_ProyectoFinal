@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit{
   userLoginOn:boolean=false;
   userData?: User;
 constructor(private loginService:LoginService){}
+
+
 ngOnInit(): void {
   this.loginService.currentUserLoginOn.subscribe({
     next:(userLoginOn)=>{

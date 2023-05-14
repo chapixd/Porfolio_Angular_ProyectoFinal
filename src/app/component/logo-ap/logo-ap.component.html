@@ -8,8 +8,8 @@
         <a href="https://www.instagram.com/maximo_arganaraz_/?hl=es-la"> <img src="../../../assets/img/instagram.png" id="instagram"></a>
         <a href="https://www.linkedin.com/in/maximo-arga%C3%B1araz-a72390213/"> <img src="../../../assets/img/linkedin.png" id="linkedin "></a>
 
-        <button class="btn btn-outline-light btn-lg px-4" type="submit" routerLink="/login/">Login</button>  
-        <button class="btn btn-outline-light btn-lg px-4" type="submit" >Cerrar Sesion</button>
+        <button class="btn btn-outline-light btn-lg px-4" type="submit" routerLink="/login/" *ngIf="!userLoginOn">Login</button>  
+        <button class="btn btn-outline-light btn-lg px-4" type="submit"*ngIf="userLoginOn" >Cerrar Sesion</button>
     </div>
 
 

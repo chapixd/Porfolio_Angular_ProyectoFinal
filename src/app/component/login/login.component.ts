@@ -5,6 +5,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { of } from 'rxjs';
 import { LoginService } from 'src/app/service/login.service';
 import { LoginRequest } from 'src/app/service/loginRequest';
+import { User } from 'src/app/service/user';
 
 
 @Component({
@@ -14,10 +15,13 @@ import { LoginRequest } from 'src/app/service/loginRequest';
 })
 
 export class LoginComponent implements OnInit {
+  userLoginOn:boolean=false;
+  userData?: User;
+
   loginError:string="";
   loginForm=this.formBuilder.group(
     {
-      email:['maximo@gmail.com',[Validators.required,Validators.email]],
+      email:['',[Validators.required,Validators.email]],
       password:['', Validators.required],
     }
   )
@@ -26,6 +30,7 @@ export class LoginComponent implements OnInit {
 
   }
   ngOnInit(): void { 
+    
     
     }
 
@@ -47,7 +52,7 @@ export class LoginComponent implements OnInit {
             this.loginError=errorData;
           },
           complete:()=>{
-            console.log("login completo");
+            alert("Loguado con exito");
             this.router.navigateByUrl('');
         this.loginForm.reset();
           }
@@ -59,8 +64,10 @@ export class LoginComponent implements OnInit {
         alert("error");
       }
     }
+
+    }
     
-  }
+  
 
   
 

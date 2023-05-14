@@ -3,7 +3,7 @@
     Experiencia
   </h2>
   <div class="col-lg-2">
-    <button type="button" class="btn btn-success" routerLink="nuevaexp">
+    <button type="button" class="btn btn-success" routerLink="nuevaexp" *ngIf="userLoginOn">
      Agregar Experiencia
     </button>
   </div>
@@ -19,18 +19,23 @@
             <h2>{{Experiencia.nombreE}} </h2>
           </td>
           <td>{{Experiencia.descripcionE}}</td>
-          <td>
-            <button type="button" class="btn btn-primary" routerLink="editExp/{{Experiencia.id}}">
+
+
+
+          <td *ngIf="userLoginOn">
+            <button type="button" class="btn btn-primary" routerLink="editexp/{{Experiencia.id}}" >
               <i class="bi bi-pencil-square"></i>
             </button>Editar
           </td>
 
 
-          <td>
+          <td *ngIf="userLoginOn">
             <button type="button" class="btn btn-danger" (click)="delete(Experiencia.id)">
               <i class="bi bi-x-circle-fill"></i>
             </button>Borrar
           </td>
+
+
         </tr>
       </tbody>
     </table>

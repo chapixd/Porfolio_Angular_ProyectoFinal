@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
+import { LoginService } from 'src/app/service/login.service';
 import { SExperienciaService } from 'src/app/service/s-experiencia.service';
+import { User } from 'src/app/service/user';
 
 
 @Component({
@@ -10,9 +12,10 @@ import { SExperienciaService } from 'src/app/service/s-experiencia.service';
 })
 export class ExperienciaLaboralComponent implements OnInit {
 experiencia: Experiencia[] = [];
+userLoginOn:boolean=false;
+userData?: User;
 
-
-constructor(private sExperiencia: SExperienciaService){}
+constructor(private sExperiencia: SExperienciaService, private loginService:LoginService){}
 
 
 

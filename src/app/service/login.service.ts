@@ -14,7 +14,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(credentials:LoginRequest):Observable<User>{
-    return this.http.get<User>("http://localhost:8080/person/").pipe(
+    return this.http.post<User>("http://localhost:8080/person/login", credentials).pipe(
       tap(userData=>{
         this.currentUserData.next(userData);
         this.currentUserLoginOn.next(true);

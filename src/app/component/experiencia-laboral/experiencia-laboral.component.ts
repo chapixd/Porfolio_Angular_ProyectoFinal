@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
+
 import { LoginService } from 'src/app/service/login.service';
 import { SExperienciaService } from 'src/app/service/s-experiencia.service';
 import { User } from 'src/app/service/user';
@@ -13,7 +14,7 @@ import { User } from 'src/app/service/user';
 export class ExperienciaLaboralComponent implements OnInit {
 experiencia: Experiencia[] = [];
 userLoginOn:boolean=false;
-userData?: User;
+
 
 constructor(private sExperiencia: SExperienciaService, private loginService:LoginService){}
 
@@ -21,7 +22,15 @@ constructor(private sExperiencia: SExperienciaService, private loginService:Logi
 
 
 ngOnInit(): void {
- 
+  this.loginService.currentUserLoginOn.subscribe(
+    {
+      next:(userLoginOn)=>{
+        this.userLoginOn=userLoginOn;
+      }
+  })
+  
+
+
   this.cargarExperiencia();
   }
 

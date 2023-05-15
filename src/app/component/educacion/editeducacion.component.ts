@@ -10,7 +10,6 @@ import { EducacionService } from 'src/app/service/educacion.service';
 })
 export class EditeducacionComponent implements OnInit{
   educacion: Educacion=null;
-  userLoginOn:boolean=false;
 
   constructor(private educacionS: EducacionService,
     private activatedRouter: ActivatedRoute,

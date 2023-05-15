@@ -8,6 +8,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class LoginService {
+  
   currentUserLoginOn: BehaviorSubject<boolean>=new BehaviorSubject<boolean>(false);
   currentUserData: BehaviorSubject<User>=new BehaviorSubject<User>({id:0,email:''});
 

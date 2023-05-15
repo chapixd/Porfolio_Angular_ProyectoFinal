@@ -45,16 +45,23 @@ export class LoginComponent implements OnInit {
       if(this.loginForm.valid){
         this.loginServiece.login(this.loginForm.value as LoginRequest).subscribe({
           next:(userData)=>{
-            console.log(userData);
+            if(userData != null){
+              console.log(userData);
+              this.router.navigateByUrl('');
+              this.loginForm.reset();
+            } else{
+              alert("Usuario no encontrado");
+            }
+      
           },
           error:(errorData)=>{
             console.log(errorData);
             this.loginError=errorData;
+
           },
           complete:()=>{
-            alert("Loguado con exito");
-            this.router.navigateByUrl('');
-        this.loginForm.reset();
+            /*alert("Loguado con exito"); */
+            
           }
         })
         

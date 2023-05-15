@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/service/login.service';
 import { User } from 'src/app/service/user';
 
@@ -9,8 +9,13 @@ import { User } from 'src/app/service/user';
 })
 export class HomeComponent implements OnInit{
   userLoginOn:boolean=false;
-  userData?: User;
 constructor(private loginService:LoginService){}
+
+
+  /*ngOnDestroy(): void {
+    this.loginService.currentUserData.unsubscribe();
+    this.loginService.currentUserLoginOn.unsubscribe();
+  }*/
 
 
 ngOnInit(): void {

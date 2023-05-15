@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login.service';
 
@@ -13,7 +13,14 @@ export class LogoAPComponent implements OnInit {
   constructor(private loginService:LoginService){
 
   }
-  
+
+  LogOut():void{
+    window.location.reload();
+    alert("session finalizada");
+  }
+
+
+
 ngOnInit(): void {
   this.loginService.currentUserLoginOn.subscribe(
     {
@@ -23,6 +30,8 @@ ngOnInit(): void {
   })
 
 }
+
+
 
 
 }

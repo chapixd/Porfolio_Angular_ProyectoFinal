@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { LoginService } from 'src/app/service/login.service';
 
 
 @Component({
@@ -9,12 +10,21 @@ import { EducacionService } from 'src/app/service/educacion.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent {
-educacion: Educacion[]=[];
 userLoginOn:boolean=false;
-  constructor(private educacionS: EducacionService){}
+educacion: Educacion[]=[];
+  constructor(private educacionS: EducacionService, private loginService:LoginService){}
 
 
   ngOnInit(): void{
+    this.loginService.currentUserLoginOn.subscribe(
+      {
+        next:(userLoginOn)=>{
+          this.userLoginOn=userLoginOn;
+        }
+    })
+
+
+
       this.cargarEducacion();
   }
     

@@ -15,7 +15,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(credentials:LoginRequest):Observable<User>{
-    return this.http.post<User>("https://portfolio-backend-ies9.onrender.com/person", credentials).pipe(
+    return this.http.post<User>("https://portfolio-backend-ies9.onrender.com/person/login/", credentials).pipe(
       tap(userData=>{
         this.currentUserData.next(userData);
         this.currentUserLoginOn.next(true);

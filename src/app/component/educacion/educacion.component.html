@@ -3,7 +3,7 @@
       Educacion
     </h2>
     <div class="col-lg-2">
-      <button type="button" class="btn btn-success" routerLink="/nuevaEdu" *ngIf="userLoginOn">
+      <button type="button" class="btn btn-success" routerLink="/nuevaEdu" >
        Agregar Educacion
       </button>
     </div>
@@ -20,14 +20,14 @@
             </td>
             <td>{{Educacion.descripcionEdu}}</td>
 
-            <td *ngIf="userLoginOn">
+            <td>
               <button type="button" class="btn btn-primary" routerLink="/editEdu/{{Educacion.id}}" >
                 <i class="bi bi-pencil-square"></i>
               </button>Editar
             </td>
   
   
-            <td *ngIf="userLoginOn">
+            <td >
               <button type="button" class="btn btn-danger" (click)="delete(Educacion.id)" >
                 <i class="bi bi-x-circle-fill"></i>
               </button>Borrar
